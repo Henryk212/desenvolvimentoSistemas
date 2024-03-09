@@ -101,7 +101,7 @@
         ];
         $varTeste_5 = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        var_dump($varTeste_01, $varTeste_2, $varTeste_3[3], $varTeste_4, $varTeste_5);
+        var_dump($varTeste_01, $varTeste_2, $varTeste_3[5], $varTeste_4, $varTeste_5);
 
 
 
