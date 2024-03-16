@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estruturas de controle</title>
+    <title>lista de exercicios</title>
 </head>
 <body>
 
 <?php
-$idade = 19;
-$peso = 500;
-$risco = "";
 
-if ($idade < 18) {
-    if ($peso < 50) {
-        $risco = "médio";
-    } elseif ($peso >= 50 && $peso <= 90) {
-        $risco = "normal";
-    } elseif ($peso > 90 && $peso <= 120) {
-        $risco = "alto";
-    } else {
-        $risco = "extremamente alto";
-    }
-} elseif ($idade >= 18 && $idade <= 50) {
-    if ($peso < 60) {
-        $risco = "médio";
-    } elseif ($peso >= 60 && $peso <= 100) {
-        $risco = "normal";
-    } elseif ($peso > 100 && $peso <= 140) {
-        $risco = "alto";
-    } else {
-        $risco = "extremamente alto";
-    }
-}
+echo "Exercicio 1";
 
-echo "Idade: $idade<br>";
-echo "Peso: $peso<br>";
-echo "Risco: $risco<br>";
+echo "<br><br>";
+    
+    $nota1 = 50;
+    $nota2 = 90;
+    $nota3 = 100;
+    $statusAluno = "";
+    
+    $media = ($nota1 + $nota2 + $nota3) / 3;
+    
+    if ($media < 4.0) {
+        $statusAluno = "Aluno reprovado";
+    } elseif ($media >= 4.0 && $media < 6.0) {
+        $statusAluno = "Aluno aguarando prova substittiva";
+    } elseif ($media >= 6.0 && $media < 10.0) {
+        $statusAluno = "Aluno aprovado";
+    } elseif ($media == 10.0) {
+        $statusAluno = "Aluno aprovado sem dificuldades";
+    }
+    
+    echo "O status do aluno é: ".$statusAluno;
+    echo "O tipo da variável média é " . gettype($media);
+
+echo "<br><br><br>";
+
+
+$statusAluno = match (true) {
+    $media < 4.0 => "Aluno reprovado",
+    $media >= 4.0 && $media < 6.0 => "Aluno aguardando prova substitutiva",
+    $media >= 6.0 && $media < 10.0 => "Aluno aprovado",
+    $media == 10.0 => "Aluno aprovado sem dificuldades",
+    default => "Média não reconhecida",
+};
+
+echo "O status do aluno é: $statusAluno";
+echo "O tipo da variável média é: " . gettype($media);
+
 ?>
 
 <?php
-
+echo "Exercicio 2";
 echo "<br><br>";
 
     $lado1 = 10;
@@ -60,28 +70,25 @@ echo "<br><br>";
     }
 
 ?>
-
 <?php
-
+echo "Exercicio 3";
 echo "<br><br>";
 
-    $numero = 15;
-    echo "<br> Verificando Numeros pares e impares<br>";
+$numero = 15;
+echo "<br> Verificando Numeros pares e impares<br>";
 
-    if($numero % 2 == 0 ){
-        echo "O numero $numero é par";
-    }else{
-        echo "O numero $numero é impar";
-    }
+if($numero % 2 == 0 ){
+    echo "O numero $numero é par";
+}else{
+    echo "O numero $numero é impar";
+}
 
 ?>
 <?php
-
+echo "Exercicio 4";
 echo "<br><br>";
 
-    echo "<br>Ano Eleitoral<br>";
-
-    $anoNascimento = 2023;
+$anoNascimento = 2023;
     $anoAtual = date('Y');
 
     $anoAtualConvertido = (int) $anoAtual;
@@ -94,12 +101,11 @@ echo "<br><br>";
         echo "Você tem $idade Você Não pode votar !!";
     }
 
+
 ?>
 <?php
-
+echo "Exercicio 5";
 echo "<br><br>";
-
-    echo "<br> CALCULOS <br>";
 
 $numero = 10;
 $operacao = 'dobro';
@@ -133,31 +139,9 @@ $resultado = match ($operacao) {
 };
 
 echo "O resultado da operação $operacao no número $numero é: $resultado";
-?>
 
-<?php
-echo "<br><br><br>";
-
-echo "Idade itilizando o match";
-
-echo "<br><br>";
-
-    $idade = 25;
-    $categoria = match (true) {
-    $idade < 5 => "Nenhuma categoria",
-    $idade >= 5 && $idade < 8 => "Infantil",
-    $idade >= 8 && $idade < 12 => "Juvenil",
-    $idade >= 12 && $idade < 17 => "Adolescente",
-    $idade >= 17 && $idade < 40 => "Adulto",
-    $idade >= 40 && $idade < 60 => "Senior",
-    default => "Idade não reconhecida",
-};
-
-echo "A categoria para a idade $idade é: $categoria";
 
 ?>
-
-
-
+    
 </body>
 </html>
