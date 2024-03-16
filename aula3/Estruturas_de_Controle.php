@@ -54,6 +54,8 @@ echo "Risco: $risco<br>";
 
 <?php
 
+echo "<br><br>";
+
     $lado1 = 10;
     $lado2 = 16;
     $lado3 = 7;
@@ -74,6 +76,8 @@ echo "Risco: $risco<br>";
 
 <?php
 
+echo "<br><br>";
+
     $numero = 15;
     echo "<br> Verificando Numeros pares e impares<br>";
 
@@ -85,6 +89,8 @@ echo "Risco: $risco<br>";
 
 ?>
 <?php
+
+echo "<br><br>";
 
     echo "<br>Ano Eleitoral<br>";
 
@@ -104,7 +110,9 @@ echo "Risco: $risco<br>";
 ?>
 <?php
 
-    echo "<br>Somas <br>";
+echo "<br><br>";
+
+    echo "<br> CALCULOS <br>";
 
 $numero = 10;
 $operacao = 'dobro';
@@ -127,6 +135,8 @@ switch ($operacao) {
 
 echo "O resultado da operação $operacao no número $numero é: $resultado";
 
+echo "<br><br>";
+
 
 $resultado = match ($operacao) {
     'dobro' => $numero * 2,
@@ -137,12 +147,30 @@ $resultado = match ($operacao) {
 
 echo "O resultado da operação $operacao no número $numero é: $resultado";
 ?>
+
+<?php
+echo "<br><br><br>";
+
+echo "Idade itilizando o match";
+
+echo "<br><br>";
+
+    $idade = 25;
+    $categoria = match (true) {
+    $idade < 5 => "Nenhuma categoria",
+    $idade >= 5 && $idade < 8 => "Infantil",
+    $idade >= 8 && $idade < 12 => "Juvenil",
+    $idade >= 12 && $idade < 17 => "Adolescente",
+    $idade >= 17 && $idade < 40 => "Adulto",
+    $idade >= 40 && $idade < 60 => "Senior",
+    default => "Idade não reconhecida",
+};
+
+echo "A categoria para a idade $idade é: $categoria";
+
 ?>
 
 
 
-
-
-    
 </body>
 </html>
