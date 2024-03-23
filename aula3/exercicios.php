@@ -13,24 +13,24 @@ echo "Exercicio 1";
 
 echo "<br><br>";
     
-    $nota1 = 50;
-    $nota2 = 90;
+    $nota1 = 100;
+    $nota2 = 100;
     $nota3 = 100;
     $statusAluno = "";
     
     $media = ($nota1 + $nota2 + $nota3) / 3;
     
-    if ($media < 4.0) {
-        $statusAluno = "Aluno reprovado";
-    } elseif ($media >= 4.0 && $media < 6.0) {
-        $statusAluno = "Aluno aguarando prova substittiva";
-    } elseif ($media >= 6.0 && $media < 10.0) {
-        $statusAluno = "Aluno aprovado";
-    } elseif ($media == 10.0) {
-        $statusAluno = "Aluno aprovado sem dificuldades";
+    if ($media < 4) {
+        echo "Aluno reprovado";
+    } elseif ($media >= 4 && $media < 6) {
+        echo "Aluno aguarando prova substittiva";
+    } elseif ($media >= 6 && $media < 10) {
+        echo "Aluno aprovado";
+    } elseif ($media == 10) {
+        echo "Aluno aprovado sem dificuldades";
     }
     
-    echo "O status do aluno é: ".$statusAluno;
+    echo $media;
     echo "O tipo da variável média é " . gettype($media);
 
 echo "<br><br><br>";
